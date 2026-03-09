@@ -10,7 +10,7 @@ JOKES = [
     {"id": 2, "joke": "How many programmers does it take to change a light bulb? None, that's a hardware problem."},
     {"id": 3, "joke": "A SQL query walks into a bar, walks up to two tables and asks... 'Can I join you?'"},
     {"id": 4, "joke": "Why did the developer go broke? Because he used up all his cache."},
-    {"id": 5, "joke": "Her GitHub repo? 100% commits: "fixed typo" -- but the typo was in the commit message"},
+    {"id": 5, "joke": "Her GitHub repo? 100% commits: 'fixed typo' -- but the typo was in the commit message"},
 ]
 
 @router.get("/list")
