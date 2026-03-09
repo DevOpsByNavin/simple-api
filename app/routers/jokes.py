@@ -11,6 +11,7 @@ JOKES = [
     {"id": 3, "joke": "A SQL query walks into a bar, walks up to two tables and asks... 'Can I join you?'"},
     {"id": 4, "joke": "Why did the developer go broke? Because he used up all his cache."},
     {"id": 5, "joke": "Her GitHub repo? 100% commits: 'fixed typo' -- but the typo was in the commit message"},
+    {"id": 6, "joke": "Why did the programmer quit his job? He couldn't handle the overflow... overflowin' deez nuts into your buffer!"},
 ]
 
 @router.get("/list")
