@@ -32,4 +32,4 @@ async def health_check():
     Critical for Kubernetes Liveness and Readiness Probes.
     Returns 200 OK if the app is running.
     """
-    return {"status": "healthy", "pod_name": os.getenv("HOSTNAME", "unknown")}
+    return {"status": "healthy"}
