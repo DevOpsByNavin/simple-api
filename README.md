@@ -1,45 +1,47 @@
-# K8s Joke API
+# simple-api
 
-A simple FastAPI project designed to test Kubernetes concepts.
+Minimal FastAPI service 
 
-## Features
-- **JSON API**: Returns jokes.
-- **HTML Responses**: Serves simple HTML for browser testing.
-- **Health Check**: `/health` endpoint. 
-- **ConfigMap Ready**: Reads `APP_ENV` and `DEBUG_MODE` from environment variables.
-- **Custom 404**: Handles missing routes gracefully.
+## Run locally
 
-## Local Development
-
-**Install dependencies**:
 ```bash
-   pip install -r requirements.txt
+python -m venv .venv
+source .venv/bin/activate 
+pip install -r requirements.txt
+uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
+
+Open:
+- http://localhost:8000/
+- http://localhost:8000/docs
+
+## Run with Docker
+
+### Build + run
+
+```bash
+docker build -t simple-api:latest .
+docker run --rm -p 8000:8000 simple-api:latest
+```
+
+### Docker Compose
+
+```bash
+docker compose up --build
+```
+
 ## Endpoints
 
 ```bash
-# index page
-curl localhost:8000/
-
-# random joke
-curl localhost:8000/jokes/random
-
-# all jokes
-curl localhost:8000/jokes/list
-
-# health check probe
-curl localhost:8000/health
-
-# check env
-curl localhost:8000/jokes/info
-
-# 404 handler
-curl localhost:8000/wtf
+GET  /                 # HTML index
+GET  /health           # health probe
+GET  /jokes/list       # all jokes
+GET  /jokes/random     # random joke
+GET  /jokes/info       # env info (APP_ENV, DEBUG_MODE)
 ```
-## Objective
 
-Implement and understand the concept of kubernetes cluster.
+Example:
 
-## Docs
-
-Find the docs at [/docs](https://github.com/DevOpsByNavin/k8s-svc/tree/main/docs) to get more idea on k8s services.
+```bash
+curl http://localhost:8000/jokes/random
+```
